@@ -211,7 +211,7 @@ export default function MainPage() {
     }, []);
 
     useEffect(() => {
-        generatePie(tablePage.viewForm)
+        generatePie(tablePage.viewForm);
     }, [tablePage.viewForm, genders, races, ethnicity, stats]);
 
     const getStats = async () => {
@@ -404,8 +404,7 @@ export default function MainPage() {
                                                 <Grid item
                                                     xs={2}>
                                                     {genders.length > 0 &&
-
-                                                        <FormControl fullWidth>
+                                                        <FormControl key={tablePage.viewForm.gender} fullWidth>
                                                             <InputLabel>성별</InputLabel>
                                                             <Select
                                                                 value={tablePage.viewForm.gender}
@@ -426,7 +425,7 @@ export default function MainPage() {
                                                 <Grid item
                                                     xs={2}>
                                                     {races.length > 0 &&
-                                                        <FormControl fullWidth>
+                                                        <FormControl key={tablePage.viewForm.race} fullWidth>
                                                             <InputLabel >인종</InputLabel>
                                                             <Select
                                                                 value={tablePage.viewForm.race}
@@ -446,7 +445,7 @@ export default function MainPage() {
                                                 <Grid item
                                                     xs={2}>
                                                     {ethnicity.length > 0 &&
-                                                        <FormControl fullWidth>
+                                                        <FormControl key={tablePage.viewForm.ethnicity} fullWidth>
                                                             <InputLabel >민족</InputLabel>
                                                             <Select
                                                                 value={tablePage.viewForm.ethnicity}
@@ -467,7 +466,7 @@ export default function MainPage() {
                                                     xs={2}>
                                                     {ethnicity.length > 0 &&
 
-                                                        <FormControl fullWidth>
+                                                        <FormControl key={tablePage.viewForm.death} fullWidth>
                                                             <InputLabel >사망여부</InputLabel>
                                                             <Select
                                                                 value={tablePage.viewForm.death}
